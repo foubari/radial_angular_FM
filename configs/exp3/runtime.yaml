@@ -1,0 +1,30 @@
+inherit: defaults.yaml
+
+experiment: exp3_runtime
+
+datasets:
+  - name: student_t
+    dim: 16
+    df: 3.0
+    n_samples: 50000
+  - name: student_t
+    dim: 32
+    df: 3.0
+    n_samples: 50000
+
+methods:
+  - name: gaussian_fm
+    source: gaussian
+    path: euclidean
+  - name: rafm_empirical
+    source: radial_empirical_ecdf
+    path: spherical_geodesic
+  - name: msgm
+    adapter: msgm
+
+# Timing config
+n_timing_runs: 3          # average over multiple runs
+time_train_steps: 10000   # measure per-step time (don't run full 100k)
+nfe_list: [32, 64, 128, 256]
+
+n_seeds: 1  # timing only

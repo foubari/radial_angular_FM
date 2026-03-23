@@ -1,0 +1,21 @@
+inherit: defaults.yaml
+
+experiment: exp1_main_benchmark
+dataset:
+  name: piv
+  dim: 32
+  data_root: data/piv
+
+methods:
+  - name: msgm
+    adapter: msgm
+  - name: gaussian_fm
+    source: gaussian
+    path: euclidean
+  - name: source_only_empirical
+    source: radial_empirical_ecdf
+    path: euclidean
+  - name: rafm_empirical
+    source: radial_empirical_ecdf
+    path: spherical_geodesic
+# NOTE: radial_oracle is NOT applicable to PIV (real dataset, analytic CDF unknown)

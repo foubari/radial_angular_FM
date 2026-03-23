@@ -1,0 +1,40 @@
+# Global defaults — inherited by all experiment configs
+# Override specific keys in per-experiment configs
+
+# Model
+hidden_dim: 128
+n_layers: 3
+premodule: null  # null = no preprocessing (default). "NormalizeLogRadius" = explicit ablation only.
+
+# Training
+lr: 0.001
+batch_size: 4096
+n_train_steps: 10000
+log_every: 200
+ckpt_every: 5000
+
+# Sampling
+solver: rk4
+nfe: 128
+n_gen_samples: 10000
+
+# Experiment
+n_seeds: 3
+base_seed: 42
+device: auto  # "auto" = cuda if available else cpu
+
+# Data
+split_seed: 0
+train_frac: 0.6
+val_frac: 0.2
+# test_frac = 0.2 (remainder)
+
+# Metrics
+n_projections_sw: 500
+n_projections_angular: 200
+n_angular_bins: 4
+norm_exploding_factor: 100  # threshold = norm_exploding_factor * median(||x||)
+
+# Output
+output_dir: outputs
+figures_dir: figures

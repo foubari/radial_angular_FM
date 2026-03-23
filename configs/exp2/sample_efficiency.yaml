@@ -1,0 +1,35 @@
+inherit: defaults.yaml
+
+experiment: exp2_sample_efficiency
+
+dataset:
+  name: student_t
+  dim: 16
+  df: 3.0
+  n_samples: 100000   # large pool, subset for training
+  correlated: true
+
+# Vary n_train — radial law estimated from train split only
+n_train_sizes: [500, 1000, 5000, 20000, 50000]
+
+methods:
+  - name: gaussian_fm
+    source: gaussian
+    path: euclidean
+  - name: source_only_oracle
+    source: radial_oracle
+    path: euclidean
+  - name: source_only_empirical_ecdf
+    source: radial_empirical_ecdf
+    path: euclidean
+  - name: source_only_empirical_log
+    source: radial_empirical_log
+    path: euclidean
+  - name: rafm_oracle
+    source: radial_oracle
+    path: spherical_geodesic
+  - name: rafm_empirical_ecdf
+    source: radial_empirical_ecdf
+    path: spherical_geodesic
+
+n_seeds: 3

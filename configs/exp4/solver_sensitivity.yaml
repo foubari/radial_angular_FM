@@ -1,0 +1,27 @@
+inherit: defaults.yaml
+
+experiment: exp4_solver_sensitivity
+
+dataset:
+  name: student_t
+  dim: 16
+  df: 3.0
+  n_samples: 50000
+  correlated: true
+
+# Use pre-trained model from exp1 (load checkpoint)
+checkpoint: null  # set to path of trained rafm_empirical checkpoint from exp1
+
+methods:
+  - name: rafm_empirical
+    source: radial_empirical_ecdf
+    path: spherical_geodesic
+
+solvers:
+  - euler
+  - heun
+  - rk4
+
+nfe_list: [4, 8, 16, 32, 64, 128, 256]
+
+n_seeds: 3

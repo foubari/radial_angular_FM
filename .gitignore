@@ -1,0 +1,53 @@
+# Claude
+.claude/
+
+# Paper and plan (not committed)
+radial_angular_FM/
+experiments_plan.tex
+*.zip
+
+# Reference MSGM code (not committed)
+18727_Multiplicative_Diffusion_code/
+
+# Runtime outputs
+outputs/
+figures/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Data and model artifacts
+*.pt
+*.pth
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Env
+.env
+.venv
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

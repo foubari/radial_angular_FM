@@ -1,0 +1,25 @@
+inherit: defaults.yaml
+
+experiment: exp1_main_benchmark
+dataset:
+  name: gaussian_aniso
+  dim: 16
+  n_samples: 50000
+  correlated: true
+
+methods:
+  - name: gaussian_fm
+    source: gaussian
+    path: euclidean
+  - name: source_only_empirical
+    source: radial_empirical_ecdf
+    path: euclidean
+  - name: rafm_empirical
+    source: radial_empirical_ecdf
+    path: spherical_geodesic
+  - name: source_only_oracle
+    source: radial_oracle
+    path: euclidean
+  - name: rafm_oracle
+    source: radial_oracle
+    path: spherical_geodesic

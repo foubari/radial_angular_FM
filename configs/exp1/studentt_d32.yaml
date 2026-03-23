@@ -1,0 +1,28 @@
+inherit: defaults.yaml
+
+experiment: exp1_main_benchmark
+dataset:
+  name: student_t
+  dim: 32
+  df: 3.0
+  n_samples: 50000
+  correlated: true
+
+methods:
+  - name: msgm
+    adapter: msgm
+  - name: gaussian_fm
+    source: gaussian
+    path: euclidean
+  - name: source_only_oracle
+    source: radial_oracle
+    path: euclidean
+  - name: source_only_empirical
+    source: radial_empirical_ecdf
+    path: euclidean
+  - name: rafm_oracle
+    source: radial_oracle
+    path: spherical_geodesic
+  - name: rafm_empirical
+    source: radial_empirical_ecdf
+    path: spherical_geodesic
