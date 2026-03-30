@@ -3,7 +3,6 @@
 Official implementation for:
 
 > **Correcting Source Mismatch in Flow Matching with Radial-Angular Transport**
-> NeurIPS 2025
 
 ---
 

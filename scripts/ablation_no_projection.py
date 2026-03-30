@@ -72,7 +72,9 @@ def run_ablation(config_path: str) -> None:
             n_layers=cfg.get("n_layers", 3),
             premodule=cfg.get("premodule", None),
         ).to(device)
-        model.load_state_dict(torch.load(ckpt_path, map_location=device, weights_only=True))
+        ckpt = torch.load(ckpt_path, map_location=device, weights_only=False)
+        state_dict = ckpt["model"] if isinstance(ckpt, dict) and "model" in ckpt else ckpt
+        model.load_state_dict(state_dict)
 
         # Build empirical source (same as training)
         from rafm.sources.radial_empirical import RadialEmpiricalSource
