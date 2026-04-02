@@ -28,6 +28,12 @@ Standard Flow Matching uses a Gaussian source N(0, I), which mismatches the radi
 
 The radial distribution is controlled entirely by the source (fitted via eCDF); the network only learns angular rotation.
 
+<p align="center">
+  <img src="figures/paper_figures/figure_path_schematic.png" width="32%" />
+  <img src="figures/paper_figures/figure1_kde_composite.png" width="66%" />
+</p>
+<p align="center"><b>Figure 1.</b> <em>Left:</em> RAFM transports along a spherical geodesic (blue), preserving the target norm, while standard FM follows a straight Euclidean path (green) through mismatched norms. <em>Right:</em> KDE density and radial histograms at intermediate times — RAFM maintains the correct radial distribution throughout, whereas FM collapses toward the Gaussian source.</p>
+
 ---
 
 ## Repository structure
